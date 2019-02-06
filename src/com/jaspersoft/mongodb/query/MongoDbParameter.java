@@ -19,6 +19,7 @@ import net.sf.jasperreports.engine.JRExpression;
 import net.sf.jasperreports.engine.JRPropertiesHolder;
 import net.sf.jasperreports.engine.JRPropertiesMap;
 import net.sf.jasperreports.engine.JRValueParameter;
+import net.sf.jasperreports.engine.type.ParameterEvaluationTimeEnum;
 
 /**
  * 
@@ -117,5 +118,10 @@ public class MongoDbParameter implements JRValueParameter {
 
 	@Override
 	public void setValue(Object value) {
+	}
+
+	@Override
+	public ParameterEvaluationTimeEnum getEvaluationTime() {
+		return null;
 	}
 }

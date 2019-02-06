@@ -2,24 +2,18 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<!--parent>
-		<groupId>com.jaspersoft.studio.community-edition</groupId>
-		<artifactId>plugins</artifactId>
-		<version>5.1.1-SNAPSHOT</version>
-		<relativePath>../aggregator/plugins/</relativePath>
-	</parent-->
 
 	<groupId>com.jaspersoft.studio.community-edition</groupId>
 	<artifactId>com.jaspersoft.studio.data.mongodb</artifactId>
 	<!--packaging>eclipse-plugin</packaging-->
 	<packaging>jar</packaging>
-	<version>5.1.1-SNAPSHOT</version>
+	<version>6.7.0-SNAPSHOT</version>
 	
 	<dependencies>
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
-			<version>5.1.0</version>
+			<version>6.7.0</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>commons-logging</artifactId>
@@ -30,7 +24,7 @@
 		<dependency>
 			<groupId>org.mongodb</groupId>
 			<artifactId>mongo-java-driver</artifactId>
-			<version>2.12.1</version>
+			<version>3.9.1</version>
 		</dependency>
 		<dependency>
 			<groupId>com.lowagie</groupId>
@@ -55,7 +49,7 @@
 		<dependency>
 			<groupId>commons-beanutils</groupId>
 			<artifactId>commons-beanutils</artifactId>
-			<version>1.8.3</version>
+			<version>1.9.3</version>
 			<exclusions>
 				<exclusion>
 					<artifactId>commons-logging</artifactId>
@@ -66,7 +60,7 @@
 		<dependency>
 			<groupId>org.slf4j</groupId>
 			<artifactId>slf4j-api</artifactId>
-			<version>1.7.5</version>
+			<version>1.7.25</version>
 		</dependency>
 	</dependencies>
 	
@@ -90,40 +84,13 @@
 				<version>3.1</version>
 				<configuration>
 					<!-- http://maven.apache.org/plugins/maven-compiler-plugin/ -->
-					<source>1.6</source>
-					<target>1.6</target>
+					<source>1.7</source>
+					<target>1.7</target>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
 	
-	<distributionManagement>
-		<repository>
-			<id>soluvas-public-releases</id>
-			<url>http://nexus.bippo.co.id/nexus/content/repositories/soluvas-public-releases/</url>
-		</repository>
-		<snapshotRepository>
-			<id>soluvas-public-snapshots</id>
-			<url>http://nexus.bippo.co.id/nexus/content/repositories/soluvas-public-snapshots/</url>
-		</snapshotRepository>
-	</distributionManagement>
-
-	<profiles>
-		<profile>
-			<!-- To deploy to bippo-gk, use: mvn -Pbippo-gk -DskipTests clean install 
-				deploy -->
-			<id>bippo-gk</id>
-			<distributionManagement>
-				<snapshotRepository>
-					<id>bippo-gk-snapshots</id>
-					<url>http://192.168.0.17:8080/nexus/content/repositories/snapshots/</url>
-				</snapshotRepository>
-				<repository>
-					<id>bippo-gk-releases</id>
-					<url>http://192.168.0.17:8080/nexus/content/repositories/releases/</url>
-				</repository>
-			</distributionManagement>
-		</profile>
-	</profiles>
-
+	
+	
 </project>
